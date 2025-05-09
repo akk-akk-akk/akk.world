@@ -1,0 +1,897 @@
+/* **********************************************************
+ * default style that take care of the default layout 
+ * and typography.
+ * ********************************************************** */
+
+/* **********************************************************
+ * let's get started and do a default reset
+ * ********************************************************** */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: dark light;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+
+
+/* **********************************************************
+ * now let's take care of our main layout and content
+ *
+ * 1. header and main-navigation
+ * 2.1 weekly
+ * 2.2 repository
+ * 2.3 misc
+ * 3. footer
+ * 4. main layout
+ * 
+ * ********************************************************** */
+
+/* 1. header and main-navigation menu */
+
+header {
+  top: 0;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+
+main {
+  margin-top: var(--header__height);
+}
+
+
+/* 2.1 weekly */
+
+.weekly ul {
+  margin-bottom: var(--spacing-l);
+}
+
+.weekly h2 {
+  font-weight: 600;
+  text-decoration: none;
+} 
+
+.weekly ul li {
+  border-bottom: 2px solid var(--color-0);
+}
+
+.weekly ul li:first-child {
+  border-top: 2px solid var(--color-0);
+}
+
+.weekly ul li a {
+  padding: var(--spacing-xs);
+  transition: padding-left 0.5s;
+  display: block;
+  color: var(--color-0);
+  transition: 0.2s;
+}
+
+.weekly ul li a:hover {
+  padding-left: var(--spacing-s);
+  color: var(--color-4);
+  /* box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7);   */
+}
+
+
+/* 2.2 repository */
+
+.repo {
+  margin-bottom:var(--spacing-l);
+}
+
+.repo h2 {
+  margin-bottom: var(--spacing-s);
+}
+
+/* Add spacing-xl between all repo sections except the first one */
+.repo:not(:first-of-type) {
+  margin-top: var(--spacing-xxl);
+}
+
+.repo__list ul {
+  border-top: solid var(--color-11) 2px;
+  padding-top: var(--spacing-s);
+  padding-bottom: var(--spacing-m);
+}
+
+.repo__item ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.repo__item ul li {
+  display: flex;
+  align-items: flex-start;
+}
+
+.repo__item ul li img {
+  max-height: 12rem;
+  width: auto;
+  object-fit: unset;
+  object-position: unset;
+  height: auto;
+}
+
+.repo__item ul li p {
+  font-size: var(--font-size-s);
+}
+
+.repo__item ul li:nth-child(1) {
+  padding-right: var(--spacing-m);
+  width: 25%;
+}
+
+.repo__item ul li:nth-child(2) {
+  padding-right: var(--spacing-l);
+  width: 30%;
+}
+
+.repo__item ul li:nth-child(3) {
+  width: 45%;
+}
+
+
+
+
+
+@media (orientation: portrait) {
+  .repo__item ul {
+    display: block;
+  }
+
+  .repo__item ul li:nth-child(n) {
+    margin-top: var(--spacing-m);
+    width: 90%;
+  }
+}
+
+/* 2.3 image with caption */
+
+figcaption p {
+  font-family: 'ABC Diatype Mono', monospace;
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-xs);
+  font-weight: bold;
+  /* font-style: italic; */
+  /* -webkit-text-stroke-width: 0.75px; */
+  width:80%;
+}
+figcaption p b {
+  font-weight: 700;
+  font-size: inherit;
+}
+
+
+/* 2.4 misc */
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+  top: var(--spacing-l);
+}
+
+.scroll__top {
+  margin: var(--spacing-s) auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 2rem;
+}
+
+.scroll__top a {
+  font-size: 1.25rem;
+  padding: 1rem;
+  transition: color 0.3s;
+  color:var(--color-nav-link);
+}
+
+.embed__video-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-bottom: 56.25%;
+}
+
+.embed__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.vid__stroke {
+  border: 1px solid var(--color-0);
+  display:block;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+
+/*
+ * image filters
+ * https://www.w3schools.com/cssref/css3_pr_filter.php
+ */
+
+
+
+ .img__bw {
+  filter: grayscale(100%);
+}
+
+.img__stroke {
+  border: 1px solid var(--color-0);
+  border-radius: 5px;
+}
+
+.img__stroke2 {
+  border-top: 1px solid var(--color-0);
+  border-bottom: 1px solid var(--color-0);
+}
+
+.img__circle {
+  border-radius: 50%;
+}
+
+.img__circle2 {
+  border-radius: 50%;
+  border: 1px solid var(--color-0);
+}
+
+.img__dash {
+  border: 2px dashed var(--color-0);
+}
+
+/* 3. footer */
+
+footer {
+  min-height: 12rem;
+  text-align: center;
+  /* padding-top: var(--spacing-m); */
+}
+
+/* 4. main layout */
+
+.row {
+  align-items: start;
+  /* padding-bottom: var(--spacing-l); */
+}
+
+.row,
+.row > ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: auto;
+  gap: var(--spacing-l);
+}
+
+.row img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.row video {
+  border-radius: 5px;
+}
+
+.row__no-gap {
+  gap: 0;
+}
+
+.row__video {
+  gap: 1%;
+}
+
+.row.small-gap.type__content {
+  gap: var(--spacing-xs);
+}
+
+.row.small-gap {
+  gap: var(--spacing-xs) !important;
+}
+
+
+.catalogue-page .row {
+  gap: var(--spacing-xl); /* Adjust the gap size as needed */
+}
+
+.catalogue-page h3 {
+font-family: 'myfont', san-serif;
+  font-size: var(--font-size-l);
+  font-weight: 600;
+  font-style: italic;
+}
+
+.catalogue-page p {
+font-family: 'ABC Diatype Mono', monospace;
+  font-size: var(--font-size-s);
+  font-weight: 600;
+}
+
+.catalogue-page figcaption p {
+  font-size: var(--font-size-xs) !important; /* Force the smaller size */
+}
+
+.catalogue-page a {
+  font-size: var(--font-size-s);
+    font-weight: 600;
+  }
+
+
+@media (orientation: portrait) {
+  .catalogue-page .row {
+    gap: var(--spacing-l); /* Adjust the gap size as needed */
+  }
+}
+
+
+
+
+.column,
+.row > ul > li {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.column h1 {
+  gap: var(--spacing-m); /* Add this if you want to control the gap size in column layouts */
+}
+
+.column__half {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 50%;
+}
+
+.column__double {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 2;
+}
+
+
+
+.type__content {
+  margin-left: var(--spacing-l);
+  margin-right: var(--spacing-l);
+  margin-bottom: var(--spacing-l);
+}
+
+.center__type {
+  display: block;
+  text-align: center;
+}
+
+/* **********************************************************
+ * Main typography
+ * ********************************************************** */
+
+h1 {
+  /* font-family: 'Courier Prime', monospace; */
+  font-size: var(--font-size-xl); 
+  font-weight: 500;
+  margin-bottom: var(--spacing-m);
+  -webkit-text-stroke-width: 0.5px;
+
+  /* letter-spacing: -2px;
+  line-height: 1.2; */
+  /* text-transform: uppercase; */
+}
+
+
+h2 {
+  font-size: var(--font-size-m);
+  font-weight: 500;
+  margin-bottom: var(--spacing-s);
+  text-decoration: underline 2px;
+  -webkit-text-stroke-width: 0.3px;
+  text-transform: uppercase;
+}
+
+
+h3 {
+  font-size: var(--font-size-m);
+  font-weight: 500;
+  margin-bottom: var(--spacing-l);
+  /* text-decoration: underline; */
+  /* color: var(--color-10) */
+}
+
+
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-m);
+  font-weight: 600;
+  margin-bottom: var(--spacing-l);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type:none;
+  -webkit-text-stroke-width: 0.25px;
+}
+
+hr {
+  height: 2px;
+  border: none;
+  background-color: var(--color-11);
+}
+
+
+/* **********************************************************
+ * Paragraph styling
+ * ********************************************************** */
+
+
+p {
+  font-size: var(--font-size-m);
+  font-weight: 500;
+  /* -webkit-text-stroke-width: 0.25px; */
+  
+  /* letter-spacing: -0.5px; */
+}
+
+p i {
+  color: var(--color-3);
+}
+
+p b {
+  -webkit-text-stroke-width: 0.75px;
+}
+
+
+
+/* p a {
+  text-decoration:underline;
+  text-underline-offset: 3px;
+} */
+
+a {
+  color: var(--color-link);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration-color: transparent;
+}
+
+p:not(:last-child) {
+  margin-bottom: var(--spacing-m);
+}
+
+.p__size-l {
+  font-size: var(--font-size-l);
+}
+
+.p__size-m {
+  font-size: var(--font-size-m);
+}
+
+.p__size-s {
+  font-size: var(--font-size-s);
+}
+
+.p__size-xs {
+  font-size: var(--font-size-xs);
+}
+
+.p__width-l {
+  width: 100%;
+}
+
+.p__width-m {
+  width: 60%;
+  min-width: 20rem;
+}
+
+.p__width-s {
+  width: 40%;
+  min-width: 15rem;
+}
+
+.p__width-xs {
+  width: 20%;
+  min-width: 10rem;
+}
+
+
+
+@media (orientation: portrait) {
+
+  .p__size-xl {
+    font-size: var(--font-size-l);
+  }
+
+  .p__size-l {
+    font-size: var(--font-size-m);
+  }
+  
+  .p__size-m {
+    font-size: var(--font-size-s);
+  }
+
+
+  h2 {
+    text-decoration: underline;
+  }
+}
+
+
+
+/* **********************************************************
+ * special features           
+ * 1. lightbox
+ * ********************************************************** */
+
+
+/* 1. lightbox
+ * click on an image (must implement class="zoom") to go full size 
+ * from: https://code-boxx.com/image-zoom-css-javascript
+ */
+
+#lightbox {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+
+  display: flex;
+  align-items: center;
+  align-items: center;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity ease 0.3s;
+}
+
+#lightbox.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+#lightbox img {
+  max-width: 75vw; /* 75% of the viewport width */
+  max-height: 75vh; /* 75% of the viewport height */
+  object-fit: contain; /* Ensure the image maintains its aspect ratio */
+  box-shadow: 0 0px 20px rgba(255, 0, 0); /* Optional: Add a shadow */
+  margin: 0 auto;
+}
+
+.zoom {
+  cursor: pointer;
+}
+
+/* ********************************************************** */
+/* debug, when enabled, useful to see the layout-boxes for    */
+/* sections and divs.                                         */
+/* set border to 1px below
+/* ********************************************************** */
+
+section,
+div,
+ul,
+li {
+  border: 0px solid;
+}
+
+.outline {
+  border: 1px dotted black;
+}
+
+
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* **********************************************************
+ * Gradient Scroll Bar
+ * ********************************************************** */
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgb(255, 255, 255,0), var(--color-4), rgb(255, 255, 255,0));
+}
+
+/* **********************************************************
+ * PDF Viewer
+ * ********************************************************** */
+
+
+.pdf-viewer {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc; /* Optional: Add a border */
+  margin: 0; /* Optional: Add spacing */
+}
+
+
+/* **********************************************************
+ * Grid Containers
+ * ********************************************************** */
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(2, 1fr); /* 2 rows */
+  /* gap: 20px; Spacing between grid items */
+  width: 100%;
+  /* max-width: 1200px; Optional: Limit the width of the grid */
+  margin: 0 auto; /* Center the grid */
+  /* padding: 20px; Optional: Add padding around the grid */
+}
+
+/* Grid items */
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  /* border-radius: 10px; Optional: Add rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container */
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+  /* transform: scale(1.05); Slightly enlarge the container */
+  /* box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7); Red glow effect */
+}
+
+.grid-item:hover img {
+  transform: scale(1.1);
+}
+
+
+/* **********************************************************
+ * Wizard Gif (Corner)
+ * ********************************************************** */
+
+.fixed-gif {
+  position: fixed; /* Keeps the GIF in the same position regardless of scrolling */
+  bottom: 20px; /* Distance from the bottom of the viewport */
+  left: 5px; /* Distance from the left of the viewport */
+  z-index: 2000; /* Ensures it appears above other elements */
+  scale: 200%;
+}
+
+.fixed-gif img {
+  width: 40px; /* Adjust the size of the GIF */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); Optional: Add a shadow for better visibility */
+}
+
+
+/* **********************************************************
+ * Hover Image
+ * ********************************************************** */
+
+.hover-image {
+  position: absolute;
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+  display: none; /* Hidden by default */
+  pointer-events: none; /* Prevent the image from interfering with mouse events */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+
+/* **********************************************************
+ * Floating Footer (Catalogue)
+ * ********************************************************** */
+
+
+.floating-footer {
+  position: fixed;
+  bottom: 0;
+  left: 10;
+  width: 100%;
+  background-color: var(--color-bg);
+  /* box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); */
+  /* border-top: 2px solid var(--color-11); */
+  z-index: 1000;
+}
+
+.floating-footer nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: var(--spacing-s);
+  margin: 0;
+  list-style: none;
+}
+
+.floating-footer nav ul li {
+  flex: 1;
+  text-align: center;
+}
+
+.floating-footer nav ul li a {
+  text-decoration: none;
+  font-size: var(--font-size-s);
+  color: var(--color-11);
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.floating-footer nav ul li a.active {
+  color: red;
+  text-shadow: 0 0 10px red;
+}
+
+
+/* Carousel container */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-0); /* Optional: Add a border */
+  border-radius: 5px; /* Optional: Add rounded corners */
+
+}
+
+/* Carousel track */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+/* Carousel items */
+.carousel-item {
+  min-width: 100%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: left; 
+  justify-content: center;
+  align-items: center;
+
+}
+.carousel-item  img{
+  .carousel-item img {
+    max-width: 100%; /* Ensure the image does not exceed the width of the container */
+    max-height: 100%; /* Ensure the image does not exceed the height of the container */
+    object-fit: contain; /* Maintain aspect ratio and fit within the container */
+    display: block; /* Remove any inline spacing issues */
+  }
+
+}
+
+/* Carousel buttons */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white; /* White background */
+  color: rgb(227, 227, 227); /* Grey arrow */
+  border: 1px solid black; /* Black border */
+  padding: 20px;
+  cursor: pointer;
+  z-index: 100;
+  border-radius: 50%; /* Circular shape */
+  width: 40px; /* Fixed width for the button */
+  height: 40px; /* Fixed height for the button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px; /* Adjust arrow size */
+  font-weight: bold;
+  
+}
+
+
+
+.carousel-button.left {
+  left: 15px;
+}
+
+.carousel-button.right {
+  right: 15px;
+}
+
+.carousel-button:hover {
+  background-color: #f0f0f0; /* Light grey background on hover */
+  color: black; /* Darker arrow on hover */
+}
+
+@media (orientation: portrait) {
+  .floating-footer {
+    display: none; /* Hide the footer */
+  }
+}
+
+.pdf-viewer-section {
+  width: 100%; /* Make the section fill the full width of the row */
+}
+
+.pdf-viewer-container {
+  width: 100%; /* Ensure the container spans the full width */
+  max-width: none; /* Remove any maximum width constraints */
+  margin: 0; /* Remove any default margins */
+  padding: 0; /* Remove any default padding */
+}
+
+.pdf-viewer {
+  width: 100%; /* Ensure the PDF viewer fills the container */
+  height: 600px; /* Adjust height as needed */
+  border: none; /* Remove border for a clean look */
+}
