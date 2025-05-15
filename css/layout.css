@@ -11,11 +11,13 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  background-color: yellow;
 }
 
 * {
   margin: 0;
   padding: 0;
+
 }
 
 html {
@@ -26,6 +28,7 @@ html {
 body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+   background-color: yellow;
 }
 
 img,
@@ -272,6 +275,11 @@ figcaption p b {
   border: 2px dashed var(--color-0);
 }
 
+.img__thumbnail {
+  max-width: 300px;
+  display: block;
+}
+
 /* 3. footer */
 
 footer {
@@ -323,38 +331,7 @@ footer {
 }
 
 
-.catalogue-page .row {
-  gap: var(--spacing-xl); /* Adjust the gap size as needed */
-}
 
-.catalogue-page h3 {
-font-family: 'myfont', san-serif;
-  font-size: var(--font-size-l);
-  font-weight: 600;
-  font-style: italic;
-}
-
-.catalogue-page p {
-font-family: 'ABC Diatype Mono', monospace;
-  font-size: var(--font-size-s);
-  font-weight: 600;
-}
-
-.catalogue-page figcaption p {
-  font-size: var(--font-size-xs) !important; /* Force the smaller size */
-}
-
-.catalogue-page a {
-  font-size: var(--font-size-s);
-    font-weight: 600;
-  }
-
-
-@media (orientation: portrait) {
-  .catalogue-page .row {
-    gap: var(--spacing-l); /* Adjust the gap size as needed */
-  }
-}
 
 
 
@@ -394,6 +371,7 @@ font-family: 'ABC Diatype Mono', monospace;
 .center__type {
   display: block;
   text-align: center;
+  margin:0 auto;
 }
 
 /* **********************************************************
@@ -405,10 +383,6 @@ h1 {
   font-size: var(--font-size-xl); 
   font-weight: 500;
   margin-bottom: var(--spacing-m);
-  -webkit-text-stroke-width: 0.5px;
-
-  /* letter-spacing: -2px;
-  line-height: 1.2; */
   /* text-transform: uppercase; */
 }
 
@@ -548,11 +522,6 @@ p:not(:last-child) {
   .p__size-m {
     font-size: var(--font-size-s);
   }
-
-
-  h2 {
-    text-decoration: underline;
-  }
 }
 
 
@@ -651,14 +620,15 @@ li {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: black;
 
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(rgb(255, 255, 255,0), var(--color-4), rgb(255, 255, 255,0));
+  background: linear-gradient(rgb(0,0,0),var(--color-3),rgb(0,0,0));
 }
+
 
 /* **********************************************************
  * PDF Viewer

@@ -16,11 +16,10 @@
 
  @import url(https://db.onlinewebfonts.com/c/fbee28f49e99c472f1f569c6ddc24ebe?family=ABC+Diatype+Mono); 
  
- /* @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sawarabi+Gothic&family=Syne+Tactile&family=Syne:wght@400..800&display=swap'); */
 
  @font-face {
     font-family: "myfont";
-    src: url("../assets/font/wkgothic_abc-webfont.woff") format('woff');
+    src: url("../assets/font/ABCDiatypeVariable.woff") format('woff');
     /* font-weight: bold; */
   }
  @font-face {
@@ -28,10 +27,20 @@
     src: url("../assets/font/ABCDiatypeSemi-MonoVariable.woff") format('woff');
     /* font-weight: bold; */
   }
+ @font-face {
+    font-family: "ABC Oracle";
+    src: url("../assets/font/ABCOracleVariable-Trial.woff") format('woff');
+    /* font-weight: bold; */
+  }
+ @font-face {
+    font-family: "ABC Oracle Triple";
+    src: url("../assets/font/ABCOracleTripleVariable-Trial.woff") format('woff');
+    /* font-weight: bold; */
+  }
 
 
 html {
-    font-family: 'myfont', sans-serif;
+    font-family: 'ABC Oracle Triple', sans-serif;
 }
 
 

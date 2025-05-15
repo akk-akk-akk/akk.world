@@ -26,7 +26,7 @@
   --color-0: black;
   --color-1: white;
   --color-2: blue;
-  --color-3: #888888;
+  --color-3: yellow;
   --color-4: red;
   --color-5: coral;
   --color-6: orange;
@@ -39,7 +39,7 @@
   --color-13: stroke black 5px;
 
   --color-fg: #111111;
-  --color-bg: #ffffff;
+  --color-bg: yellow;
   --color-header-bg: #ffffff;
   --color-header-fg: black;
   --color-title: orange;
