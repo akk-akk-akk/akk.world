@@ -379,11 +379,11 @@ footer {
  * ********************************************************** */
 
 h1 {
-  /* font-family: 'Courier Prime', monospace; */
-  font-size: var(--font-size-xl); 
-  font-weight: 500;
+  /* font-family: 'ABC Oracle Triple', monospace; */
+  font-size: var(--font-size-l); 
+  font-weight: 600;
   margin-bottom: var(--spacing-m);
-  /* text-transform: uppercase; */
+  text-transform: uppercase;
 }
 
 
@@ -437,7 +437,7 @@ hr {
 
 p {
   font-size: var(--font-size-m);
-  font-weight: 500;
+  font-weight: 600;
   /* -webkit-text-stroke-width: 0.25px; */
   
   /* letter-spacing: -0.5px; */
