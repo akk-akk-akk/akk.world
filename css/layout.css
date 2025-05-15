@@ -11,7 +11,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  background-color: yellow;
 }
 
 * {
@@ -28,7 +27,8 @@ html {
 body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-   background-color: yellow;
+    background-color: var(--color-bg);
+    color: var(--color-0);
 }
 
 img,
@@ -276,8 +276,12 @@ figcaption p b {
 }
 
 .img__thumbnail {
-  max-width: 300px;
+  max-width: 200px;
   display: block;
+}
+
+.img__center {
+    margin: 0 auto;
 }
 
 /* 3. footer */
@@ -308,6 +312,7 @@ footer {
   width: 100%;
   height: 100%;
   border-radius: 5px;
+  
 }
 
 .row video {
@@ -329,6 +334,8 @@ footer {
 .row.small-gap {
   gap: var(--spacing-xs) !important;
 }
+
+
 
 
 
@@ -371,7 +378,6 @@ footer {
 .center__type {
   display: block;
   text-align: center;
-  margin:0 auto;
 }
 
 /* **********************************************************
@@ -379,21 +385,23 @@ footer {
  * ********************************************************** */
 
 h1 {
-  /* font-family: 'ABC Oracle Triple', monospace; */
-  font-size: var(--font-size-l); 
+  font-size: var(--font-size-xxl); 
   font-weight: 600;
   margin-bottom: var(--spacing-m);
   text-transform: uppercase;
+  line-height:1.0;
 }
 
 
 h2 {
-  font-size: var(--font-size-m);
+ font-family: 'ABC Oracle Triple', monospace;
+  font-size: var(--font-size-l);
   font-weight: 500;
   margin-bottom: var(--spacing-s);
-  text-decoration: underline 2px;
-  -webkit-text-stroke-width: 0.3px;
-  text-transform: uppercase;
+
+  /* text-decoration: underline 2px; */
+  /* -webkit-text-stroke-width: 0.3px; */
+  /* text-transform: uppercase; */
 }
 
 
@@ -427,6 +435,15 @@ hr {
   height: 2px;
   border: none;
   background-color: var(--color-11);
+}
+
+.keyword {
+  display: inline-block;
+  padding: 0.4em 1em;
+  border: 2px solid #000;
+  border-radius: 999px;
+  font-size: 1em;
+  background: #fff;
 }
 
 
@@ -562,10 +579,9 @@ p:not(:last-child) {
 }
 
 #lightbox img {
-  max-width: 75vw; /* 75% of the viewport width */
-  max-height: 75vh; /* 75% of the viewport height */
+  max-width: 90vw; /* 75% of the viewport width */
+  max-height: 90vh; /* 75% of the viewport height */
   object-fit: contain; /* Ensure the image maintains its aspect ratio */
-  box-shadow: 0 0px 20px rgba(255, 0, 0); /* Optional: Add a shadow */
   margin: 0 auto;
 }
 
@@ -615,7 +631,7 @@ li {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
 }
 
 /* Track */

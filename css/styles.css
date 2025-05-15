@@ -40,7 +40,7 @@
 
 
 html {
-    font-family: 'ABC Oracle Triple', sans-serif;
+    font-family: 'ABC Oracle', sans-serif;
 }
 
 
@@ -62,11 +62,6 @@ html {
     /* text-shadow:0.5px 0.5px 5px, 0.5px 0.5px 5px; */
 
     
-}
-
-body {
-    background-color: var(--color-bg);
-    color: var(--color-0);
 }
 
 @media (orientation: portrait) {
