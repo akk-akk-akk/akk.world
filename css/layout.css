@@ -181,6 +181,7 @@ figcaption p {
   margin-top: var(--spacing-xs);
   font-size: var(--font-size-xs);
   font-weight: bold;
+  color:var(--color-5);
   /* font-style: italic; */
   /* -webkit-text-stroke-width: 0.75px; */
   width:80%;
@@ -284,6 +285,25 @@ figcaption p b {
     margin: 0 auto;
 }
 
+.img__middle {
+  display: flex;
+    align-items: center;
+}
+
+.image-grid-xs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+.image-grid-xs img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
 /* 3. footer */
 
 footer {
@@ -295,7 +315,7 @@ footer {
 /* 4. main layout */
 
 .row {
-  align-items: start;
+  /* align-items: start; */
   /* padding-bottom: var(--spacing-l); */
 }
 
@@ -367,6 +387,10 @@ footer {
   flex: 2;
 }
 
+.column.small-gap {
+  gap: var(--spacing-xs) !important;
+}
+
 
 
 .type__content {
@@ -396,8 +420,8 @@ h1 {
 h2 {
  font-family: 'ABC Oracle Triple', monospace;
   font-size: var(--font-size-l);
-  font-weight: 500;
-  margin-bottom: var(--spacing-s);
+  font-weight: 800;
+  margin-bottom: var(--spacing-m);
 
   /* text-decoration: underline 2px; */
   /* -webkit-text-stroke-width: 0.3px; */
@@ -406,11 +430,11 @@ h2 {
 
 
 h3 {
+ font-family: 'ABC Oracle Triple', monospace;
   font-size: var(--font-size-m);
-  font-weight: 500;
-  margin-bottom: var(--spacing-l);
-  /* text-decoration: underline; */
-  /* color: var(--color-10) */
+  font-weight: 600;
+  margin-bottom: var(--spacing-m);
+
 }
 
 
@@ -441,9 +465,10 @@ hr {
   display: inline-block;
   padding: 0.4em 1em;
   border: 2px solid #000;
-  border-radius: 999px;
-  font-size: 1em;
-  background: #fff;
+  /* border-radius: 999px; */
+  /* font-size: 1em; */
+  color: var(--color-bg);
+  background: var(--color-fg);
 }
 
 
@@ -454,7 +479,8 @@ hr {
 
 p {
   font-size: var(--font-size-m);
-  font-weight: 600;
+  font-weight: 400;
+  line-height: 1.25;
   /* -webkit-text-stroke-width: 0.25px; */
   
   /* letter-spacing: -0.5px; */
@@ -476,6 +502,7 @@ p b {
 } */
 
 a {
+  font-weight: inherit;
   color: var(--color-link);
   transition: color 0.3s;
 }

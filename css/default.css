@@ -8,7 +8,7 @@
   --font-size-xs: 0.7rem;
   --font-size-s: 0.85rem;
   --font-size-m: 1rem; /* default font-size used */
-  --font-size-l: 1.5rem;
+  --font-size-l: 1.8rem;
   --font-size-xl: 2.5rem;
   --font-size-xxl: 5.5rem;
   --font-size-title: 1rem;
@@ -28,7 +28,7 @@
   --color-2: blue;
   --color-3: yellow;
   --color-4: rgb(222, 0, 0);
-  --color-5: coral;
+  --color-5: rgb(167, 167, 167);
   --color-6: orange;
   --color-7: lime;
   --color-8: green;
