@@ -191,6 +191,19 @@ figcaption p b {
   font-size: inherit;
 }
 
+.figcaption-l {
+  font-family: 'ABC Oracle', sans-serif !important;
+  text-align: center;
+  margin-top: var(--spacing-s);
+  margin-bottom: var(--spacing-s);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color:var(--color-5);
+  /* font-style: italic; */
+  /* -webkit-text-stroke-width: 0.75px; */
+  width:80%;
+}
+
 
 /* 2.4 misc */
 
@@ -287,7 +300,7 @@ figcaption p b {
 
 .img__middle {
   display: flex;
-    align-items: center;
+  align-items: center;
 }
 
 .image-grid-xs {
@@ -307,7 +320,7 @@ figcaption p b {
 /* 3. footer */
 
 footer {
-  min-height: 12rem;
+  min-height: 10rem;
   text-align: center;
   /* padding-top: var(--spacing-m); */
 }
@@ -391,6 +404,13 @@ footer {
   gap: var(--spacing-xs) !important;
 }
 
+.column img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+/* optional: set a max width */
+}
 
 
 .type__content {
@@ -409,11 +429,12 @@ footer {
  * ********************************************************** */
 
 h1 {
-  font-size: var(--font-size-xxl); 
+   font-family: 'ABC Oracle Triple', monospace;
+  font-size: var(--font-size-xl); 
   font-weight: 600;
   margin-bottom: var(--spacing-m);
-  text-transform: uppercase;
-  line-height:1.0;
+  /* text-transform: uppercase; */
+  line-height: 1.2;
 }
 
 
@@ -438,16 +459,19 @@ h3 {
 }
 
 
-h4,
+h4 {
+   font-family: 'ABC Oracle', monospace;
+  font-size: var(--font-size-s);
+  font-weight: 400;
+  color: var(--color-5);
+}
+
+
 h5,
 h6 {
   font-size: var(--font-size-m);
   font-weight: 600;
   margin-bottom: var(--spacing-l);
-}
-
-a {
-  text-decoration: none;
 }
 
 ul {
@@ -502,7 +526,9 @@ p b {
 } */
 
 a {
+  text-decoration: none;
   font-weight: inherit;
+  line-height: inherit;
   color: var(--color-link);
   transition: color 0.3s;
 }
@@ -554,6 +580,11 @@ p:not(:last-child) {
 
 
 @media (orientation: portrait) {
+
+h1 {
+    font-size: var(--font-size-l);
+  }
+
 
   .p__size-xl {
     font-size: var(--font-size-l);
@@ -663,13 +694,20 @@ li {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: black;
-
+  background: white;
+border:0;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(rgb(0,0,0),var(--color-3),rgb(0,0,0));
+  background: linear-gradient(rgb(255,255,255),var(--color-10),rgb(255,255,255));
+}
+
+@media (orientation: portrait) {
+  /* width */
+  ::-webkit-scrollbar {
+    display:none;
+  }
 }
 
 
@@ -805,6 +843,11 @@ li {
 }
 
 
+/* **********************************************************
+ * CAROUSELL
+ * ********************************************************** */
+
+
 /* Carousel container */
 .carousel {
   position: relative;
@@ -815,9 +858,8 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-0); /* Optional: Add a border */
-  border-radius: 5px; /* Optional: Add rounded corners */
-
+  /* border: 1px solid var(--color-0); 
+  border-radius: 5px; */
 }
 
 /* Carousel track */
@@ -832,7 +874,7 @@ li {
 .carousel-item {
   min-width: 100%;
   height: 100%;
-  padding: 10px;
+  /* padding: 10px; */
   box-sizing: border-box;
   text-align: left; 
   justify-content: center;
@@ -840,23 +882,22 @@ li {
 
 }
 .carousel-item  img{
-  .carousel-item img {
     max-width: 100%; /* Ensure the image does not exceed the width of the container */
     max-height: 100%; /* Ensure the image does not exceed the height of the container */
     object-fit: contain; /* Maintain aspect ratio and fit within the container */
     display: block; /* Remove any inline spacing issues */
+    border-radius: 0;
   }
 
-}
 
 /* Carousel buttons */
 .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: white; /* White background */
-  color: rgb(227, 227, 227); /* Grey arrow */
-  border: 1px solid black; /* Black border */
+  background-color: var(--color-7); /* White background */
+  color: white; /* Grey arrow */
+  border: 0;
   padding: 20px;
   cursor: pointer;
   z-index: 100;
@@ -882,15 +923,34 @@ li {
 }
 
 .carousel-button:hover {
-  background-color: #f0f0f0; /* Light grey background on hover */
-  color: black; /* Darker arrow on hover */
+  background-color: var(--color-4); /* Light grey background on hover */
+  color: white; /* Darker arrow on hover */
 }
+
+.carousel-row {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: 350px; /* or match your carousel height */
+}
+
+
+
 
 @media (orientation: portrait) {
   .floating-footer {
     display: none; /* Hide the footer */
   }
 }
+
+
+
+
+
+/* **********************************************************
+ * PDF Viewer
+ * ********************************************************** */
+
 
 .pdf-viewer-section {
   width: 100%; /* Make the section fill the full width of the row */
@@ -908,3 +968,131 @@ li {
   height: 600px; /* Adjust height as needed */
   border: none; /* Remove border for a clean look */
 }
+
+
+
+
+
+/* **********************************************************
+ * Project Grid
+ * ********************************************************** */
+
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-s, 2rem);
+  padding-top: var(--spacing-s);
+  padding-left: var(--spacing-xs, 2rem);
+  padding-right: var(--spacing-xs, 2rem);
+  padding-bottom: var(--spacing-m, 2rem);
+}
+
+@media (max-width: 700px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-item {
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* border: 3px solid var(--color-0); */
+}
+
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  /* border-radius: 200px; */
+  background: var(--color-0);
+  /* margin-bottom: 0; */
+  display: flex;
+  /* align-items: center;
+  justify-content: center; */
+  /* border: 2px solid var(--color-0); */
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s;
+  display: block;
+}
+
+.project-meta-row {
+  display: flex;
+   justify-content: space-between;
+  align-items: center; /* Change from flex-start to center */
+  /* margin-bottom: 0.5em; */
+  /* gap: 1em; */
+}
+
+
+.project-title {
+  font-family: 'ABC Oracle Triple', monospace;
+  text-align: left;
+  font-weight: 600;
+  font-size: var(--font-size-m);
+  margin-top: var(--spacing-s);
+  margin-bottom: var(--spacing-xs);
+  
+}
+
+.project-description {
+  font-family: 'ABC Oracle Triple', monospace;
+  text-align: center;
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  margin-bottom: var(--spacing-s);
+  margin-top: var(--spacing-xs);
+  padding-left: var(--spacing-l);
+  padding-right: var(--spacing-l);
+}
+
+.project-tags {
+  font-family: 'ABC Oracle Triple', monospace;
+  text-align: right;
+  font-weight: 600;
+  font-size: var(--font-size-xs);
+  margin-top: var(--spacing-s);
+  margin-bottom: var(--spacing-xs);
+
+  /* padding: 0.5em 1em;
+  border: none;
+  border-radius: 999px;
+  border: 2px solid var(--color-0); */
+}
+
+.tag {
+    font-family: 'ABC Oracle Triple', monospace;
+  text-align: right;
+  font-weight: 600;
+  font-size: var(--font-size-xs);
+  margin-top: var(--spacing-s);
+  margin-bottom: var(--spacing-xs);
+
+}
+
+
+
+
+
+
+
+/* FADE IN */
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+

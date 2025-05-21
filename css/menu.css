@@ -7,7 +7,7 @@
   z-index: 1000;
 }
 
-.main__nav-title-invert {
+.main__nav-title-invert li {
   z-index: 1000;
   color: var(--color-1);
 }
@@ -15,6 +15,7 @@
 header {
   /* background-color: var(--color-0); */
   height: var(--header__height);
+  font-family: 'ABC Oracle Triple', monospace;
   /* border-bottom:1px solid black; */
 }
 
@@ -23,7 +24,9 @@ header {
   z-index: 100;
   padding: 0 var(--spacing-xs) 0 var(--spacing-xs);
   display: flex;
+  gap: var(--spacing-l);
   justify-content: space-between;
+
   /* text-decoration: underline 2px; */
 /* background: var(--color-1); */
 
@@ -37,7 +40,7 @@ header {
   gap: var(--spacing-l);
 }
 .main__nav-bar ul li {
-  font-weight: 500;
+  font-weight: 600;
   font-size: var(--font-size-l);
 }
 
@@ -66,6 +69,7 @@ header {
 }
 
 .main__nav-ham {
+  z-index: 99999;
   display: none;
 }
 
@@ -86,14 +90,17 @@ header {
 
 
 .prev__next {
+  font-family: 'ABC Oracle Triple', monospace;
+  font-size: var(--font-size-l);
   display:flex;
   padding: var(--spacing-s) var(--spacing-m);
-  border-top:1px solid black;
-  border-bottom:1px solid black;
+  border-top:1px solid var(--color-7);
+  border-bottom:px solid var(--color-7);
+  
   ul {
     display:flex;
     width:100%;
-    justify-content: space-between;
+    justify-content:space-evenly;
     li {
       a {
         color:var(--color-nav-link);
@@ -108,25 +115,31 @@ header {
 
 @media only screen and (max-width: 768px) {
   .main__nav-bar {
+    z-index: 999999;
     display: flex;
-    justify-content: space-between;
+    /* justify-content:baseline; */
     align-items: flex-start;
   }
 
-  .main__nav-bar ul {
+  .main__nav-bar ul li{
     display: block;
-    font-size: 0.9rem;
-    padding-top: 0rem;
+    /* font-size: var(--font-size-l); */
+    font-size: 1.25em;
     
   }
 
+  .main__nav-title-invert {
+    display: none !important;
+  }
+
   .main__nav-list {
+    flex-direction: column;
     height: 102vh;
     left: -100%;
     margin: 0;
-    margin-top: -1vh;
-    padding-top: 20vh;
-    padding-bottom: 20vh;
+    /* margin-top: -1vh; */
+    /* padding-top: 20vh; */
+    padding-bottom: 80vh;
     position: fixed;
     background: #ffffff;
     transition: 0.3s;
@@ -144,10 +157,8 @@ header {
   .main__nav-current,
   .main__nav-item {
     margin-left: 1rem;
-    padding-bottom: 1rem;
-    margin-bottom: 3rem;
-    width: 90%;
-    border-bottom: var(--color-11) 10px solid;
+    /* width: 90%; */
+    /* border-bottom: var(--color-11) 10px solid; */
   }
 
   .main__nav-current,
@@ -173,7 +184,7 @@ header {
   .main__nav-ham {
     display: block;
     cursor: pointer;
-    margin: 0 0.25rem;
+    padding-top: 5px;
   }
 
   .main__nav-ham.active .main__nav-ham-bar:nth-child(1) {
@@ -184,5 +195,9 @@ header {
   .main__nav-ham.active .main__nav-ham-bar:nth-child(2) {
     -webkit-transform: translateY(-3px) rotate(-45deg);
     transform: translateY(0px) rotate(-45deg);
+  }
+
+  .prev__next {
+    font-size: var(--font-size-m);
   }
 }

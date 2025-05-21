@@ -128,18 +128,18 @@ function logErrorMessage(theError) {
 }
 
 
-document.addEventListener("keydown", function(e) {
+document.addEventListener("keydown", function (e) {
   if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey)
-      return;
+    return;
   const o = document.getElementById("go-prev").href
     , s = document.getElementById("go-next").href;
   if (e.key == "ArrowLeft")
-      window.location.assign(o);
+    window.location.assign(o);
   else if (e.key == "ArrowRight")
-      window.location.assign(s);
+    window.location.assign(s);
   else if (e.key == "Escape") {
-      const t = document.getElementById("bio-details");
-      t.classList.toggle("expanded"),
+    const t = document.getElementById("bio-details");
+    t.classList.toggle("expanded"),
       t.classList.toggle("collapsed")
   }
 });
@@ -261,7 +261,78 @@ document.addEventListener("DOMContentLoaded", () => {
     leftButton.addEventListener("click", () => moveCarousel(-1));
     rightButton.addEventListener("click", () => moveCarousel(1));
 
-    
-    
+
+
   });
 });
+
+
+document.querySelectorAll('.project-thumb').forEach(thumb => {
+  const images = JSON.parse(thumb.getAttribute('data-images'));
+  if (!images || images.length < 2) return;
+  let idx = 0, interval = null;
+  const img = thumb.querySelector('img');
+  thumb.addEventListener('mouseenter', () => {
+    interval = setInterval(() => {
+      idx = (idx + 1) % images.length;
+      img.src = images[idx];
+    }, 1000);
+  });
+  thumb.addEventListener('mouseleave', () => {
+    clearInterval(interval);
+    idx = 0;
+    img.src = images[0];
+  });
+});
+
+
+//PROJECT PAGE AUTOMATION
+
+document.addEventListener("DOMContentLoaded", function () {
+  const grid = document.querySelector('.project-grid');
+  if (!grid || !window.projects) return;
+  grid.innerHTML = window.projects.map(project => `
+  <a href="${project.url}" class="project-item">
+    <div class="project-meta-row">
+      <div class="project-title">${project.title}</div> ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}
+      
+    </div>
+    <div class="project-thumb" data-images='${JSON.stringify(project.images)}'>
+      <img src="${project.images[0]}" alt="${project.title}" />
+    </div>
+  </a>
+`).join('');
+
+//  <div class="project-tags">
+//         ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}
+//       </div>
+
+  // Supercut hover effect
+  document.querySelectorAll('.project-thumb').forEach(thumb => {
+    const images = JSON.parse(thumb.getAttribute('data-images'));
+    if (!images || images.length < 2) return;
+    let idx = 0, interval = null;
+    const img = thumb.querySelector('img');
+   thumb.addEventListener('mouseenter', () => {
+  let startDelay = 0; // delay in ms before cycling starts
+  interval = setTimeout(() => {
+    interval = setInterval(() => {
+      idx = (idx + 1) % images.length;
+      img.src = images[idx];
+    }, 750);
+  }, startDelay);
+});
+thumb.addEventListener('mouseleave', () => {
+  clearTimeout(interval);
+  clearInterval(interval);
+  idx = 0;
+  img.src = images[0];
+});
+    thumb.addEventListener('mouseleave', () => {
+      clearInterval(interval);
+      idx = 0;
+      img.src = images[0];
+    });
+  });
+});
+

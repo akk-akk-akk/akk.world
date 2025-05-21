@@ -7,9 +7,10 @@
   /* font-size */
   --font-size-xs: 0.7rem;
   --font-size-s: 0.85rem;
-  --font-size-m: 1rem; /* default font-size used */
-  --font-size-l: 1.8rem;
-  --font-size-xl: 2.5rem;
+  --font-size-m: 0.9rem;
+  /* default font-size used */
+  --font-size-l: 2rem;
+  --font-size-xl: 3rem;
   --font-size-xxl: 5.5rem;
   --font-size-title: 1rem;
   --font-weight-title: 700;
@@ -23,15 +24,15 @@
   --spacing-xxl: 12rem;
 
   /* color */
-  --color-0: rgb(15, 15, 15);
+  --color-0: rgb(10, 10, 10);
   --color-1: white;
   --color-2: blue;
   --color-3: yellow;
   --color-4: rgb(222, 0, 0);
-  --color-5: rgb(167, 167, 167);
+  --color-5: rgb(125, 125, 125);
   --color-6: orange;
-  --color-7: lime;
-  --color-8: green;
+  --color-7: dodgerblue;
+  --color-8: rgb(201, 218, 228);
   --color-9: darkgreen;
   --color-10: dodgerblue;
   --color-11: blue;
@@ -43,12 +44,12 @@
   --color-header-bg: #ffffff;
   --color-header-fg: black;
   --color-title: orange;
-  --color-link:var(--color-4);
+  --color-link: var(--color-7);
   --color-link-hover: var(--color-10);
-  --color-nav-link: var(--color-4);
+  --color-nav-link: var(--color-7);
   --color-nav-link-hover: var(--color-11);
-  
-  --header__height: 2.2rem;
+
+  --header__height: 2.5rem;
 }
 
 
@@ -57,7 +58,7 @@
  * Custom margin and padding sizes
  * ********************************************************** */
 
- .margin__auto {
+.margin__auto {
   margin: auto;
 }
 
@@ -165,6 +166,11 @@
   margin-right: var(--spacing-s);
 }
 
+.margin__x-xs {
+  margin-left: var(--spacing-xs);
+  margin-right: var(--spacing-xs);
+}
+
 .margin__xl {
   margin: var(--spacing-xl);
 }
@@ -231,6 +237,11 @@
 .padding__x-s {
   padding-left: var(--spacing-s);
   padding-right: var(--spacing-s);
+}
+
+.padding__x-xs {
+  padding-left: var(--spacing-xs);
+  padding-right: var(--spacing-xs);
 }
 
 .padding__y-xl {
@@ -340,7 +351,7 @@
  * ********************************************************** */
 
 .color__bg-0 {
-  background: var(--color-0); 
+  background: var(--color-0);
   border-radius: 5px;
 }
 
@@ -431,6 +442,7 @@
 .color__bg-11 {
   background: var(--color-11) !important;
 }
+
 .color__bg-12 {
   background: var(--color-12) !important;
 }
