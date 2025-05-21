@@ -406,7 +406,7 @@ footer {
 
 .column img {
   width: 100%;
-  height: auto;
+  /* height: auto; */
   object-fit: contain;
   display: block;
 /* optional: set a max width */

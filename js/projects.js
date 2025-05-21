@@ -50,6 +50,17 @@ window.projects = [
     ],
     tags: ["(Publication)"]
 
+  }, 
+  {
+    title: "Erika's Gig Posters",
+    url: "projects/work/erika-posters.html",
+    images: [
+      "assets/images/erika-posters/erika-cover-1.jpg",
+      "assets/images/erika-posters/erika-cover-2.jpg",
+      "assets/images/erika-posters/erika-cover-3.jpg",
+      "assets/images/erika-posters/erika-cover-4.jpg"
+    ],
+        tags: ["Illustration, Poster Design"]
   },
   
    {
@@ -62,17 +73,7 @@ window.projects = [
     ],
     tags: ["(Publication)"]
   },
-  {
-    title: "Erika's Gig Posters",
-    url: "projects/work/erika-posters.html",
-    images: [
-      "assets/images/erika-posters/erika-cover-1.jpg",
-      "assets/images/erika-posters/erika-cover-2.jpg",
-      "assets/images/erika-posters/erika-cover-3.jpg",
-      "assets/images/erika-posters/erika-cover-4.jpg"
-    ],
-        tags: ["Illustration, Poster Design"]
-  },
+ 
   {
     title: "Top Most Best Airport in the World",
     url: "projects/play/top-most-best-airport.html",
