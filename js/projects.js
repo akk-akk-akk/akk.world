@@ -102,3 +102,24 @@ window.projects = [
   },  
 
 ];
+
+
+
+const illustrationImages = [
+  "assets/images/illustrations/direction.jpg",
+  "assets/images/illustrations/dumbass-1.jpg",
+  "assets/images/illustrations/dumbass-2.jpg",
+  "assets/images/illustrations/losing-it.jpg",
+  "assets/images/illustrations/rat.jpg",
+
+  // Add more filenames as needed
+];
+
+const flexibleGrid = document.querySelector('.flexible-grid');
+if (flexibleGrid) {
+  flexibleGrid.innerHTML = illustrationImages.map(src => `
+    <div class="flexible-grid-item">
+      <img src="${src}" alt="">
+    </div>
+  `).join('');
+}
