@@ -414,8 +414,8 @@ footer {
 
 
 .type__content {
-  margin-left: var(--spacing-l);
-  margin-right: var(--spacing-l);
+  margin-left: var(--spacing-m);
+  margin-right: var(--spacing-m);
   margin-bottom: var(--spacing-l);
 }
 
@@ -423,6 +423,8 @@ footer {
   display: block;
   text-align: center;
 }
+
+
 
 /* **********************************************************
  * Main typography

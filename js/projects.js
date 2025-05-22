@@ -98,7 +98,7 @@ window.projects = [
         
       
     ],
-        tags: ["(Creative Coding, Research Through Design, Publication, Video)"]
+        tags: ["(Speculative Design, Creative Coding, Publication, Video)"]
   },  
 
 ];
