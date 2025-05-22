@@ -27,12 +27,12 @@
         position: relative;
         top: auto;
     }
-    
+
     .column,
     .row ul li {
         display: flex;
         flex: auto;
-        width:100%;
+        width: 100%;
     }
 
 
@@ -40,7 +40,7 @@
  * media (images, video)
  * ********************************************************** */
 
-
+    .img__cover-35,
     .img__cover-50,
     .img__cover-67,
     .img__cover-75,
@@ -48,8 +48,12 @@
         width: 100%;
         object-fit: cover;
         position: relative;
+        display: block
     }
 
+    .img__cover-35 {
+        height: 35vh;
+    }
 
     .img__cover-50 {
         height: 50vh;
@@ -58,7 +62,7 @@
     .img__cover-67 {
         height: 67vh;
     }
-
+ 
     .img__cover-75 {
         height: 75vh;
     }
@@ -66,7 +70,7 @@
     .p__size-l {
         font-size: var(--font-size-m);
     }
-    
+
     .mobile__hide {
         display: none;
     }
