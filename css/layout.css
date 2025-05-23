@@ -22,6 +22,7 @@
 html {
   color-scheme: dark light;
   scroll-behavior: smooth;
+
 }
 
 body {
@@ -838,8 +839,8 @@ border:0;
 /* Carousel container */
 .carousel {
   position: relative;
-  width: 100vw;
-  max-width: 100vw;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   overflow: hidden;
   display: flex;
@@ -904,12 +905,7 @@ border:0;
   color: white; /* Darker arrow on hover */
 }
 
-.carousel-row {
-  display: flex;
-  align-items: stretch;
-  width: 100%;
-  min-height: 350px; /* or match your carousel height */
-}
+
 
 
 
