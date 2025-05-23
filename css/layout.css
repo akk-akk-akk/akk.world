@@ -481,9 +481,9 @@ ul {
 }
 
 hr {
-  height: 2px;
+  height: 3px;
   border: none;
-  background-color: var(--color-11);
+  background-color: var(--color-7);
 }
 
 .keyword {
@@ -784,20 +784,6 @@ border:0;
   height: auto; /* Maintain aspect ratio */
   border-radius: 10px; /* Optional: Add rounded corners */
   /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); Optional: Add a shadow for better visibility */
-}
-
-
-/* **********************************************************
- * Hover Image
- * ********************************************************** */
-
-.hover-image {
-  position: absolute;
-  width: 150px; /* Adjust size as needed */
-  height: auto;
-  display: none; /* Hidden by default */
-  pointer-events: none; /* Prevent the image from interfering with mouse events */
-  z-index: 1000; /* Ensure it appears above other elements */
 }
 
 
@@ -1114,5 +1100,32 @@ border:0;
   to {
     opacity: 1;
   }
+}
+
+
+.hover-container {
+  position: relative; /* Needed for absolute positioning of the image */
+}
+
+.hover-container h3 {
+ color: var(--color-7);
+}
+
+.popup-image {
+  position: fixed;
+  height: auto;
+  width: 240px; /* or your preferred width */
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+}
+.hover-container:hover .popup-image {
+  visibility: visible;
+  opacity: 1;
+  width: 100px;
 }
 

@@ -337,26 +337,24 @@ thumb.addEventListener('mouseleave', () => {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  const previewImg = document.createElement('img');
-  previewImg.className = 'hover-preview-img';
-  document.body.appendChild(previewImg);
 
-  document.querySelectorAll('.hover-image').forEach(el => {
-    el.addEventListener('mouseenter', e => {
-      previewImg.src = el.getAttribute('data-img');
-      previewImg.style.display = 'block';
-      previewImg.style.opacity = '1';
-    });
-    el.addEventListener('mousemove', e => {
-      previewImg.style.left = (e.clientX + 20) + 'px';
-      previewImg.style.top = (e.clientY - 20) + 'px';
-    });
-    el.addEventListener('mouseleave', e => {
-      previewImg.style.display = 'none';
-      previewImg.style.opacity = '0';
-    });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const popupImg = document.querySelector('.popup-image');
+  const hoverContainer = document.querySelector('.hover-container');
+
+  hoverContainer.addEventListener('mouseenter', () => {
+    popupImg.style.visibility = 'visible';
+    popupImg.style.opacity = '1';
+  });
+
+  hoverContainer.addEventListener('mousemove', (e) => {
+    popupImg.style.left = (e.clientX + 0) + 'px';
+    popupImg.style.top = (e.clientY - 720) + 'px';
+  });
+
+  hoverContainer.addEventListener('mouseleave', () => {
+    popupImg.style.visibility = 'hidden';
+    popupImg.style.opacity = '0';
   });
 });
-
-
