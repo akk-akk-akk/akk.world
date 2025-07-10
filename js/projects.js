@@ -3,9 +3,9 @@ window.projects = [
     title: "Bad Artist Coffee Co.",
     url: "projects/work/bad-artist.html",
     images: [
+         "assets/images/bad-artist/badartist-index.jpg",
        "assets/images/bad-artist/badartist-icon-1.jpg",
        "assets/images/bad-artist/badartist-packaging-2.jpg",
-  
       "assets/images/bad-artist/badartist-icon-live.jpg",
       "assets/images/bad-artist/badartist-logo-1.jpg"
     ],
@@ -15,7 +15,10 @@ window.projects = [
   {
     title: "MORNING",
     url: "projects/work/morning.html",
-    images: [     "assets/images/morning/morning-cover.jpg",      "assets/images/morning/morning-stickers-1.png",      "assets/images/morning/morning-cards.jpeg",
+    images: ["assets/images/morning/morning-cover.jpg",
+      "assets/images/morning/morning-cover.jpg",
+      "assets/images/morning/morning-stickers-1.png",      
+      "assets/images/morning/morning-cards.jpeg",
     ],
     tags: ["(In-House Design, Marketing, Socials)" ]
   },
@@ -23,8 +26,11 @@ window.projects = [
     title: "Time is a Black Circle (Dawn Ng)",
     url: "projects/work/tiabc.html",
     images: [
-        "assets/images/tiabc/tiabc-interior-2.jpg",
-      "assets/images/tiabc/tiabc-cover.jpg",
+             "assets/images/tiabc/tiabc-cover-2.jpg",
+       "assets/images/tiabc/tiabc-cover.jpg",
+
+        "assets/images/tiabc/tiabc-interior-1.jpg",
+
       "assets/images/tiabc/tiabc-interior-3.jpg"
     ],
     description: "Graphic assistance for bringing Dawn's cylindrical roller disco installation to life.",
@@ -37,6 +43,7 @@ window.projects = [
         "assets/images/horizon/horizon-7.jpeg",
  "assets/images/horizon/horizon-4.jpeg",
       "assets/images/horizon/horizon-cover.jpg",
+      "assets/images/horizon/horizon-2.jpeg",
     ],
      tags: ["(Spatial, Exhibition, Publication)"]
   },
@@ -52,18 +59,6 @@ window.projects = [
 
   }, 
   {
-    title: "Erika's Gig Posters",
-    url: "projects/work/erika-posters.html",
-    images: [
-      "assets/images/erika-posters/erika-cover-1.jpg",
-      "assets/images/erika-posters/erika-cover-2.jpg",
-      "assets/images/erika-posters/erika-cover-3.jpg",
-      "assets/images/erika-posters/erika-cover-4.jpg"
-    ],
-        tags: ["Illustration, Poster Design"]
-  },
-  
-   {
     title: "Man Eat Man Meat Deli",
     url: "projects/play/man-eat-man-deli.html",
     images: ["assets/images/man-eat-man-deli/deli-coverpage.jpg",
@@ -73,13 +68,25 @@ window.projects = [
     ],
     tags: ["(Publication)"]
   },
+  {
+    title: "Erika's Gig Posters",
+    url: "projects/work/erika-posters.html",
+    images: [
+      "assets/images/erika-posters/erika-cover-1.jpg",
+      "assets/images/erika-posters/erika-cover-2.jpg",
+      "assets/images/erika-posters/erika-cover-3.jpg",
+      "assets/images/erika-posters/erika-cover-4.jpg"
+    ],
+        tags: ["(Illustration, Poster Design)"]
+  },
  
   {
     title: "Top Most Best Airport in the World",
     url: "projects/play/top-most-best-airport.html",
     images: [
+            "assets/images/top-most-best-airport/airport-display-3.jpg",
            "assets/images/top-most-best-airport/airport-image-2.jpeg",
-      "assets/images/top-most-best-airport/airport-display-3.jpg",
+
  
       "assets/images/top-most-best-airport/airport-display-5.jpg",
       

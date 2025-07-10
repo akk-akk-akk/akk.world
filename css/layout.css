@@ -1097,31 +1097,3 @@ border:0;
     opacity: 1;
   }
 }
-
-
-.hover-container {
-  position: relative; /* Needed for absolute positioning of the image */
-}
-
-.hover-container h3 {
- color: var(--color-7);
-}
-
-.popup-image {
-  position: fixed;
-  height: auto;
-  width: 240px; /* or your preferred width */
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-}
-.hover-container:hover .popup-image {
-  visibility: visible;
-  opacity: 1;
-  width: 100px;
-}
-

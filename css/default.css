@@ -45,9 +45,9 @@
   --color-header-fg: black;
   --color-title: orange;
   --color-link: var(--color-7);
-  --color-link-hover: var(--color-10);
+  --color-link-hover: var(--color-4);
   --color-nav-link: var(--color-7);
-  --color-nav-link-hover: var(--color-11);
+  --color-nav-link-hover: var(--color-4);
 
   --header__height: 2.5rem;
 }

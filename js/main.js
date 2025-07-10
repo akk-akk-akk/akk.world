@@ -358,3 +358,4 @@ document.addEventListener('DOMContentLoaded', function() {
     popupImg.style.opacity = '0';
   });
 });
+

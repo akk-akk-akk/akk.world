@@ -92,10 +92,12 @@ header {
 .prev__next {
   font-family: 'ABC Oracle Triple', monospace;
   font-size: var(--font-size-l);
+  font-weight: 600;
   display:flex;
-  padding: var(--spacing-s) var(--spacing-m);
-  border-top:1px solid var(--color-7);
-  border-bottom:px solid var(--color-7);
+  padding: var(--spacing-m) var(--spacing-m) var(--spacing-xs) var(--spacing-m);
+  border-top:2px solid var(--color-7);
+  /* border-bottom:px solid var(--color-7); */
+  
   
   ul {
     display:flex;
@@ -110,6 +112,10 @@ header {
       }
     }
   }
+}
+
+.scroll__top {
+  padding-bottom:var(--spacing-xs);
 }
 
 
