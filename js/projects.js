@@ -98,7 +98,7 @@ window.projects = [
   },  
   {
     title: "→ Magic in the Machine",
-    url: "https://magicinthemachine-cpj.netlify.app/catalogue.html",
+    url: "projects/play/magic-in-the-machine.html",
     images: [
        "assets/images/magic-in-the-machine/magic-4.jpeg",   
           "assets/images/magic-in-the-machine/magic-9.jpg",     
