@@ -300,12 +300,17 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="project-thumb" data-images='${JSON.stringify(project.images)}'>
       <img src="${project.images[0]}" alt="${project.title}" />
     </div>
+  
+      <div class="project-description">${project.description}
+      
+    </div>
+
   </a>
 `).join('');
 
-//  <div class="project-tags">
-//         ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}
-//       </div>
+  //  <div class="project-tags">
+  //         ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ')}
+  //       </div>
 
   // Supercut hover effect
   document.querySelectorAll('.project-thumb').forEach(thumb => {
@@ -313,21 +318,20 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!images || images.length < 2) return;
     let idx = 0, interval = null;
     const img = thumb.querySelector('img');
-   thumb.addEventListener('mouseenter', () => {
-  let startDelay = 0; // delay in ms before cycling starts
-  interval = setTimeout(() => {
-    interval = setInterval(() => {
+    thumb.addEventListener('mouseenter', () => {
       idx = (idx + 1) % images.length;
       img.src = images[idx];
-    }, 750);
-  }, startDelay);
-});
-thumb.addEventListener('mouseleave', () => {
-  clearTimeout(interval);
-  clearInterval(interval);
-  idx = 0;
-  img.src = images[0];
-});
+      interval = setInterval(() => {
+        idx = (idx + 1) % images.length;
+        img.src = images[idx];
+      }, 750);
+    });
+    thumb.addEventListener('mouseleave', () => {
+      clearTimeout(interval);
+      clearInterval(interval);
+      idx = 0;
+      img.src = images[0];
+    });
     thumb.addEventListener('mouseleave', () => {
       clearInterval(interval);
       idx = 0;
@@ -339,7 +343,7 @@ thumb.addEventListener('mouseleave', () => {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const popupImg = document.querySelector('.popup-image');
   const hoverContainer = document.querySelector('.hover-container');
 
@@ -356,6 +360,37 @@ document.addEventListener('DOMContentLoaded', function() {
   hoverContainer.addEventListener('mouseleave', () => {
     popupImg.style.visibility = 'hidden';
     popupImg.style.opacity = '0';
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const popup = document.getElementById('center-popup-img');
+  document.querySelectorAll('.center-hover-link').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      popup.src = link.getAttribute('data-img');
+      popup.style.display = 'block';
+      popup.style.opacity = '1';
+    });
+    link.addEventListener('mouseleave', () => {
+      popup.style.display = 'none';
+      popup.style.opacity = '0';
+    });
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const hoverImg = document.getElementById('hover-img');
+  document.querySelectorAll('.hover-link').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      hoverImg.src = link.getAttribute('data-img');
+      hoverImg.style.display = 'block';
+    });
+    link.addEventListener('mouseleave', () => {
+      hoverImg.style.display = 'none';
+      hoverImg.src = '';
+    });
   });
 });
 

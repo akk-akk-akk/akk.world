@@ -68,112 +68,7 @@ main {
 }
 
 
-/* 2.1 weekly */
 
-.weekly ul {
-  margin-bottom: var(--spacing-l);
-}
-
-.weekly h2 {
-  font-weight: 600;
-  text-decoration: none;
-} 
-
-.weekly ul li {
-  border-bottom: 2px solid var(--color-0);
-}
-
-.weekly ul li:first-child {
-  border-top: 2px solid var(--color-0);
-}
-
-.weekly ul li a {
-  padding: var(--spacing-xs);
-  transition: padding-left 0.5s;
-  display: block;
-  color: var(--color-0);
-  transition: 0.2s;
-}
-
-.weekly ul li a:hover {
-  padding-left: var(--spacing-s);
-  color: var(--color-4);
-  /* box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7);   */
-}
-
-
-/* 2.2 repository */
-
-.repo {
-  margin-bottom:var(--spacing-l);
-}
-
-.repo h2 {
-  margin-bottom: var(--spacing-s);
-}
-
-/* Add spacing-xl between all repo sections except the first one */
-.repo:not(:first-of-type) {
-  margin-top: var(--spacing-xxl);
-}
-
-.repo__list ul {
-  border-top: solid var(--color-11) 2px;
-  padding-top: var(--spacing-s);
-  padding-bottom: var(--spacing-m);
-}
-
-.repo__item ul {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.repo__item ul li {
-  display: flex;
-  align-items: flex-start;
-}
-
-.repo__item ul li img {
-  max-height: 12rem;
-  width: auto;
-  object-fit: unset;
-  object-position: unset;
-  height: auto;
-}
-
-.repo__item ul li p {
-  font-size: var(--font-size-s);
-}
-
-.repo__item ul li:nth-child(1) {
-  padding-right: var(--spacing-m);
-  width: 25%;
-}
-
-.repo__item ul li:nth-child(2) {
-  padding-right: var(--spacing-l);
-  width: 30%;
-}
-
-.repo__item ul li:nth-child(3) {
-  width: 45%;
-}
-
-
-
-
-
-@media (orientation: portrait) {
-  .repo__item ul {
-    display: block;
-  }
-
-  .repo__item ul li:nth-child(n) {
-    margin-top: var(--spacing-m);
-    width: 90%;
-  }
-}
 
 /* 2.3 image with caption */
 
@@ -433,9 +328,8 @@ footer {
 h1 {
    font-family: 'ABC Oracle Triple', monospace;
   font-size: var(--font-size-xl); 
-  font-weight: 600;
-  margin-bottom: var(--spacing-m);
-  /* text-transform: uppercase; */
+  font-weight: 400;
+  -webkit-text-stroke-width: 1px;
   line-height: 1.2;
 }
 
@@ -691,7 +585,7 @@ li {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
 }
 
 /* Track */
@@ -953,11 +847,11 @@ border:0;
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-s, 2rem);
+  gap: var(--spacing-m, 2rem);
   padding-top: var(--spacing-s);
-  padding-left: var(--spacing-xs, 2rem);
-  padding-right: var(--spacing-xs, 2rem);
-  padding-bottom: var(--spacing-m, 2rem);
+  padding-left: var(--spacing-m, 2rem);
+  padding-right: var(--spacing-m, 2rem);
+  padding-bottom: var(--spacing-l, 2rem);
 }
 
 @media (max-width: 700px) {
@@ -978,8 +872,8 @@ border:0;
   width: 100%;
   aspect-ratio: 4/3;
   overflow: hidden;
-  /* border-radius: 200px; */
-  background: var(--color-0);
+  border-radius: 5px;
+  /* background: var(--color-0); */
   /* margin-bottom: 0; */
   display: flex;
   /* align-items: center;
@@ -998,45 +892,44 @@ border:0;
 .project-meta-row {
   display: flex;
    justify-content: space-between;
-  align-items: center; /* Change from flex-start to center */
+  align-items:baseline; /* Change from flex-start to center */
   /* margin-bottom: 0.5em; */
   /* gap: 1em; */
 }
 
 
+
+
 .project-title {
   font-family: 'ABC Oracle Triple', monospace;
-  text-align: left;
+  text-align:left;
   font-weight: 600;
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-mm);
   margin-top: var(--spacing-s);
   margin-bottom: var(--spacing-xs);
-  
+  transition: transform 0.75s cubic-bezier(.4,1.5,.5,1);
 }
+
+@media (max-width: 1280px) {
+  .project-title {
+    font-size: var(--font-size-m);
+  }
+}
+
+.project-item:hover .project-title {
+  transform: translateX(10px); /* Move right by 18px */
+}
+
 
 .project-description {
   font-family: 'ABC Oracle Triple', monospace;
-  text-align: center;
+  text-align: leftx;
   font-weight: 400;
   font-size: var(--font-size-m);
   margin-bottom: var(--spacing-s);
   margin-top: var(--spacing-xs);
-  padding-left: var(--spacing-l);
+  /* padding-left: var(--spacing-l); */
   padding-right: var(--spacing-l);
-}
-
-.project-tags {
-  font-family: 'ABC Oracle Triple', monospace;
-  text-align: right;
-  font-weight: 600;
-  font-size: var(--font-size-xs);
-  margin-top: var(--spacing-s);
-  margin-bottom: var(--spacing-xs);
-
-  /* padding: 0.5em 1em;
-  border: none;
-  border-radius: 999px;
-  border: 2px solid var(--color-0); */
 }
 
 .tag {
@@ -1048,6 +941,9 @@ border:0;
   margin-bottom: var(--spacing-xs);
 
 }
+
+
+
 
 
 /* IMAGE GRID 2 */
@@ -1083,8 +979,6 @@ border:0;
 
 
 
-
-
 /* FADE IN */
 
 .fade-in {
@@ -1096,4 +990,19 @@ border:0;
   to {
     opacity: 1;
   }
+}
+
+#hover-img {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Sits behind other containers */
+  max-width: 60vw; /* Adjust as needed */
+  max-height: 60vh; /* Adjust as needed */
+  height: auto;
+  background: none;
+  border-radius: 0;
+  opacity: 0;
 }

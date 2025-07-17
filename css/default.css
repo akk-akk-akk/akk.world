@@ -7,8 +7,9 @@
   /* font-size */
   --font-size-xs: 0.7rem;
   --font-size-s: 0.85rem;
-  --font-size-m: 0.9rem;
+  --font-size-m: 1rem;
   /* default font-size used */
+    --font-size-mm: 1.3rem;
   --font-size-l: 2rem;
   --font-size-xl: 3rem;
   --font-size-xxl: 5.5rem;
@@ -24,13 +25,13 @@
   --spacing-xxl: 12rem;
 
   /* color */
-  --color-0: rgb(10, 10, 10);
+  --color-0: rgb(30, 30, 30);
   --color-1: white;
   --color-2: blue;
   --color-3: yellow;
   --color-4: rgb(222, 0, 0);
-  --color-5: rgb(125, 125, 125);
-  --color-6: orange;
+  --color-5: rgb(100, 100, 100);
+  --color-6: rgb(150, 150, 150);
   --color-7: dodgerblue;
   --color-8: rgb(201, 218, 228);
   --color-9: darkgreen;
@@ -45,7 +46,7 @@
   --color-header-fg: black;
   --color-title: orange;
   --color-link: var(--color-7);
-  --color-link-hover: var(--color-4);
+  --color-link-hover: var(--color-5);
   --color-nav-link: var(--color-7);
   --color-nav-link-hover: var(--color-4);
 
