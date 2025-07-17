@@ -42,7 +42,7 @@ header {
 
 .main__nav-bar ul li {
   font-weight: 600;
-  font-size: var(--font-size-mm);
+  font-size: var(--font-size-l);
 }
 
 .main__nav-bar ul li a {
