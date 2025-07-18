@@ -340,6 +340,25 @@
     padding-right: var(--spacing-m);
   }
 
+  .padding__y-xl {
+    padding-top: var(--spacing-l);
+    padding-bottom: var(--spacing-l);
+  }
+
+  .padding-top-l {
+    padding-top: var(--spacing-m);
+  }
+
+  .padding__top-xl {
+    padding-top: var(--spacing-l);
+
+  }
+
+  .padding__bottom-xl {
+    padding-bottom: var(--spacing-l);
+
+  }
+
   .padding__top-xl {
     padding-top: var(--spacing-l);
   }
@@ -353,7 +372,7 @@
 
 .color__bg-0 {
   background: var(--color-0);
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 .color__bg-1 {
