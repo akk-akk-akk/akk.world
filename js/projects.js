@@ -89,9 +89,9 @@ window.projects = [
     title: "→ Top Most Best Airport in the World",
     url: "projects/play/top-most-best-airport.html",
     images: [
+                "assets/images/top-most-best-airport/airport-image-2.jpeg",
+          "assets/images/top-most-best-airport/airport-display-4.jpg",
             "assets/images/top-most-best-airport/airport-display-3.jpg",
-           "assets/images/top-most-best-airport/airport-image-2.jpeg",
-      "assets/images/top-most-best-airport/airport-display-5.jpg",
     ],
     description: "Photographic investigation into a megastructure such as the Singapore Changi Airport",
         tags: ["Photography as Research, Publication"]
